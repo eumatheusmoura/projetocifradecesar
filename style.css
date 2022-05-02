@@ -1,0 +1,212 @@
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+    "IBM Plex Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  color: #292929;
+}
+
+body {
+  background-color: #e8e8e8;
+}
+
+/* ALINHAR O JUSTIFY CONTENT PARA CENTER E RETIRAR MARGIN */
+
+.principal {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 5%);
+  border: 1px solid rgba(0, 0, 0, 0.147);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 10px;
+}
+
+.form h1 {
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.form img {
+  content: url("./img/senha.png");
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  background-color: #d2f9e2;
+  border-radius: 18px;
+}
+
+.form p {
+  color: #696969;
+}
+
+textarea {
+  border: 1px solid black;
+  padding: 5px;
+  width: 300px;
+  height: 150px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #e2e3e4;
+  margin-bottom: 15px;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+textarea:focus {
+  border: 1px solid #1ab366;
+  box-shadow: 0 0 0 2px #a6f2cc;
+}
+
+select {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+  border: 1px solid #e2e3e4;
+  font-size: 16px;
+}
+
+label {
+  font-weight: 500;
+  color: #696969;
+}
+
+.radioinputs {
+  display: flex;
+  height: 50px;
+  width: 200px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.radioinputs .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0 15px;
+  border: 1px solid lightgrey;
+  transition: all 0.3s ease;
+  background-color: #f3f4f6;
+}
+.radioinputs .option .opcao {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 5px;
+}
+.radioinputs .option .opcao::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #1ab366;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: #1ab366;
+  background: #1ab366;
+  box-shadow: 0 0 0 2px #a6f2cc;
+}
+#option-1:checked:checked ~ .option-1 .opcao,
+#option-2:checked:checked ~ .option-2 .opcao {
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .opcao::before,
+#option-2:checked:checked ~ .option-2 .opcao::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.radioinputs .option span {
+  margin-left: 3px;
+  font-size: 14px;
+  color: #808080;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: #fff;
+}
+
+.btn-submit {
+  background-color: #1ab366;
+  width: 100%;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.incremento {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.incremento p {
+  font-weight: 500;
+}
+
+.incremento input[type="number"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e3e4;
+  background-color: #f3f4f6;
+  font-size: 16px;
+  -webkit-appearance: none;
+}
+
+.incremento input[type="number"]:focus {
+  border: 1px solid #1ab366;
+  box-shadow: 0 0 0 2px #a6f2cc;
+  -webkit-appearance: none;
+}
+
+.incremento input[type="number"]::-webkit-inner-spin-button,
+.incremento input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
