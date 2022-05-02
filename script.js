@@ -53,12 +53,17 @@ radioDecodificar.addEventListener("click", function () {
 
 // FUNÇÃO CODIFICAR TEXTO
 
-var resultadoCode = btnEnviar.addEventListener("click", function (e) {
+var resultadoCodeficacao = btnEnviar.addEventListener("click", function (e) {
   e.preventDefault();
   var resultado = "";
   for (var i = 0; i < texto.value.length; i++) {
     var asciiNum = texto.value[i].charCodeAt();
-    if (asciiNum >= 65 && asciiNum <= 77) {
+    if (
+      asciiNum >= 65 &&
+      asciiNum <= 77 &&
+      opcoes.value == "cifraDeCesar" &&
+      radioCodificar.value == "codificar"
+    ) {
       resultado += String.fromCharCode(asciiNum + +incinput.value);
     } else if (asciiNum >= 78 && asciiNum <= 90) {
       resultado += String.fromCharCode(asciiNum - +incinput.value);
@@ -66,7 +71,3 @@ var resultadoCode = btnEnviar.addEventListener("click", function (e) {
   }
   console.log(resultado);
 });
-// [a, b, c, d, e, f, g, h, i, j, k, 1, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
-// Change the inputs below to test
-
-// rot13("y")
