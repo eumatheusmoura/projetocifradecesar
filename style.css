@@ -13,7 +13,8 @@
 }
 
 body {
-  background-color: #e8e8e8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 /* ALINHAR O JUSTIFY CONTENT PARA CENTER E RETIRAR MARGIN */
@@ -21,10 +22,10 @@ body {
 .principal {
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 20px;
+
   align-items: center;
+  justify-content: center;
+  background-color: #e6e6e6;
 }
 
 .intro {
@@ -83,9 +84,9 @@ textarea:focus {
 
 select {
   border: 1px solid black;
-  padding: 5px;
+  padding: 10px;
   background-color: #f3f4f6;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #e2e3e4;
   font-size: 16px;
 }
@@ -134,7 +135,7 @@ label {
   left: 4px;
   width: 12px;
   height: 12px;
-  background: #1ab366;
+  background: #138656;
   border-radius: 50%;
   opacity: 0;
   transform: scale(1.5);
@@ -145,8 +146,8 @@ input[type="radio"] {
 }
 #option-1:checked:checked ~ .option-1,
 #option-2:checked:checked ~ .option-2 {
-  border-color: #1ab366;
-  background: #1ab366;
+  border-color: #138656;
+  background: #138656;
   box-shadow: 0 0 0 2px #a6f2cc;
 }
 #option-1:checked:checked ~ .option-1 .opcao,
@@ -169,9 +170,9 @@ input[type="radio"] {
 }
 
 .btn-submit {
-  background-color: #1ab366;
+  background-color: #138656;
   width: 100%;
-  color: white;
+  color: rgba(255, 255, 255, 0.836);
   padding: 10px 15px;
   font-size: 16px;
   font-weight: 600;
@@ -209,4 +210,32 @@ input[type="radio"] {
 .incremento input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.containerd {
+  background-color: #138656;
+}
+
+.resulth3 {
+  margin: 100px 0px 0px 50px;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #a6f2d26c;
+  color: #138656;
+  width: fit-content;
+}
+
+.teste1 {
+  margin: 20px 0px 0px 50px;
+  width: fit-content;
+  max-width: 500px;
+  word-break: break-all;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #a6f2d26c;
+  border: 1px solid #a6f2d26c;
+  border-radius: 20px;
+  padding: 15px;
 }

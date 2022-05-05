@@ -22,6 +22,21 @@ opcoes.addEventListener("change", function () {
   }
 });
 
+// MUDANDO MENSAGEM 'CODEFICAR' PARA 'DECODIFICAR'
+
+radioCodificar.addEventListener("click", function () {
+  if (true) {
+    btnEnviar.innerHTML = `<button type="submit" class="btn-submit" id="btn-enviar">Codificar mensagem</button>`;
+  }
+});
+radioDecodificar.addEventListener("click", function () {
+  if (true) {
+    btnEnviar.innerHTML = `<button type="submit" class="btn-submit" id="btn-enviar">Decodificar mensagem</button>`;
+  }
+});
+
+// VALIDADOR DO INCREMENTO
+
 function validaIncremento() {
   let increInput = incinput.value;
   increInput = increInput % 26;
@@ -30,6 +45,8 @@ function validaIncremento() {
   }
   ciDeCesar(increInput);
 }
+
+// CIFRA DE CESAR
 
 function ciDeCesar(increment) {
   var texto = document.querySelector("#texto");
@@ -59,9 +76,26 @@ function ciDeCesar(increment) {
   InserirHTML("teste1", textoDeSaida);
 }
 
+//BASE64
+function b64() {
+  var txtDeSaidab64 = texto.value;
+
+  if (radioCodificar.checked) {
+    txt64Code = btoa(txtDeSaidab64);
+    InserirHTML("teste1", txt64Code);
+  } else if (radioDecodificar.checked) {
+    txt64Decode = atob(txt64Code);
+    InserirHTML("teste1", txt64Decode);
+  } else {
+    Alert("Selecione uma opção válida");
+  }
+}
+
+// RESULTADO CODIFICACAO
+
 function InserirHTML(ID, texto1) {
   let divTextoDeSaida = document.getElementById(ID);
-  divTextoDeSaida.innerHTML = texto1;
+  divTextoDeSaida.innerHTML = `<p class="teste1">${texto1}</p>`;
 }
 
 btnEnviar.onclick = (e) => {
@@ -69,6 +103,7 @@ btnEnviar.onclick = (e) => {
   if (opcoes.value == "cifraDeCesar") {
     validaIncremento();
   } else if (opcoes.value == "base64") {
+    b64();
   } else {
     alert("Selecione uma opção válida");
   }
