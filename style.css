@@ -44,6 +44,7 @@ body {
   flex-direction: column;
   width: 350px;
   gap: 10px;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 10%);
 }
 
 .form h1 {
@@ -238,4 +239,12 @@ input[type="radio"] {
   border: 1px solid #a6f2d26c;
   border-radius: 20px;
   padding: 15px;
+}
+
+hr {
+  content: "";
+  height: 1.5px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 5px 0px 10px 0px;
 }
